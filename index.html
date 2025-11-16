@@ -2,9 +2,15 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>中工雋詠｜南港區｜賞屋心得與個人觀點</title>
+  <title>賞屋筆記｜北市・新北・桃園・基隆｜my-fun.tw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="中工雋詠賞屋心得：南港區三房預售案，個人主觀心得、中立觀點、生活感受與價格推算。">
+  <meta name="description" content="個人賞屋筆記，記錄台北、新北、桃園、基隆的預售與成屋建案心得與主觀評分，非廣告、不代銷。">
+  <link rel="canonical" href="https://my-fun.tw/">
+  <!-- 簡易 SEO / 社群 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="賞屋筆記｜北市・新北・桃園・基隆">
+  <meta property="og:description" content="用實際賞屋心得、主觀評分，整理北北桃基建案的居住感與價格體感。">
+  <meta property="og:url" content="https://my-fun.tw/">
   <style>
     :root {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -23,7 +29,7 @@
       padding: 16px 16px 48px;
     }
     header {
-      margin: 8px 0 24px;
+      margin: 12px 0 24px;
     }
     .badge {
       display: inline-flex;
@@ -49,13 +55,13 @@
     .subtitle {
       color: #6b7280;
       font-size: 14px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
-    .pill-row {
+    .category-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .pill {
       padding: 4px 10px;
@@ -65,90 +71,37 @@
       font-size: 12px;
       color: #4b5563;
     }
-    .summary-card {
-      background: #111827;
-      color: #f9fafb;
-      border-radius: 16px;
-      padding: 16px 18px;
-      margin-bottom: 24px;
+    .grid {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
-    .score-main {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .score-number {
-      font-size: 32px;
-      font-weight: 700;
-    }
-    .score-tag {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(249,250,251,0.06);
-      border: 1px solid rgba(249,250,251,0.16);
-      font-size: 13px;
-    }
-    .one-line {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #e5e7eb;
-    }
-
-    .quick-facts {
-      font-size: 13px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 6px 16px;
-    }
-    .quick-label {
-      color: #9ca3af;
-      margin-right: 4px;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.1fr);
-      gap: 18px;
-    }
-    @media (max-width: 860px) {
-      .summary-card { grid-template-columns: minmax(0,1fr); }
-      .layout { grid-template-columns: minmax(0, 1fr); }
-    }
-
-    section {
+    .card {
       background: white;
       border-radius: 16px;
-      padding: 16px 18px;
-      margin-bottom: 16px;
+      padding: 14px 14px 16px;
       box-shadow: 0 1px 2px rgba(15,23,42,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
     }
-    section h2 {
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(15,23,42,0.12);
+    }
+    .card-title {
       font-size: 16px;
-      margin: 0 0 10px;
+      font-weight: 600;
     }
-    section h3 {
-      font-size: 14px;
-      margin: 14px 0 4px;
-      color: #374151;
+    .card-meta {
+      font-size: 13px;
+      color: #6b7280;
     }
-    p {
-      margin: 4px 0 8px;
-      font-size: 14px;
-    }
-    ul {
-      margin: 4px 0 8px 18px;
-      padding: 0;
-      font-size: 14px;
-    }
-
     .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 6px;
     }
     .tag {
       padding: 2px 8px;
@@ -157,214 +110,81 @@
       color: #1d4ed8;
       font-size: 12px;
     }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .photo-card {
-      border-radius: 12px;
-      background: #f3f4f6;
-      border: 1px dashed #e5e7eb;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: #9ca3af;
-      text-align: center;
-      padding: 8px;
-    }
-
     footer {
-      margin-top: 24px;
+      margin-top: 32px;
       font-size: 12px;
       color: #9ca3af;
       text-align: center;
     }
-
   </style>
-</head>
 
+  <!-- JSON-LD：網站資訊 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "賞屋筆記 my-fun.tw",
+    "url": "https://my-fun.tw/",
+    "description": "記錄北市、新北、桃園、基隆建案的個人賞屋心得與主觀評分。"
+  }
+  </script>
+</head>
 <body>
   <div class="page">
-
     <header>
       <div class="badge">
         <span class="badge-dot"></span>
         <span>個人賞屋筆記 · 非廣告、不代銷</span>
       </div>
-      <h1>中工雋詠｜南港三房預售屋｜個人賞屋心得</h1>
-      <div class="subtitle">基地約 670 坪 · 114 戶住家＋6 店面 · 2029 Q1 預計交屋</div>
+      <h1>賞屋筆記 my-fun.tw</h1>
+      <div class="subtitle">記錄我實際走訪的建案，用主觀評分＋生活體感整理，不是投資建議，也不是廣告。</div>
 
-      <div class="pill-row">
-        <div class="pill">南港區</div>
-        <div class="pill">三房</div>
-        <div class="pill">預售屋</div>
-        <div class="pill">都更案</div>
-        <div class="pill">公設比 31%</div>
+      <div class="category-row">
+        <span class="pill">北市</span>
+        <span class="pill">新北</span>
+        <span class="pill">桃園</span>
+        <span class="pill">基隆</span>
+        <span class="pill">預售</span>
+        <span class="pill">成屋</span>
       </div>
     </header>
 
-    <div class="summary-card">
-      <div>
-        <div class="score-main">
-          <span>我的評分：</span>
-          <span class="score-number">83</span>
-          <span>/100</span>
-          <span class="score-tag">暫不優先考慮</span>
-        </div>
-        <p class="one-line">
-          結構穩、坪效佳，但玄關、陽台、公設與生活氛圍沒有完全符合我的家庭需求；
-          以 5–6 千萬預算來看，我會再比較其他選項。
-        </p>
-      </div>
+    <section>
+      <h2 style="font-size:16px;margin:0 0 10px;">最新賞屋心得</h2>
+      <div class="grid">
 
-      <div class="quick-facts">
-        <div><span class="quick-label">單價</span>約 130 萬／坪（高樓）</div>
-        <div><span class="quick-label">總價</span>約 5–6 千萬</div>
-        <div><span class="quick-label">坪數</span>38 坪（權狀約 40.5 坪）</div>
-        <div><span class="quick-label">車位</span>大車位（約 295–345 萬）</div>
-        <div><span class="quick-label">樓高</span>3.2 米</div>
-        <div><span class="quick-label">交屋</span>2029 Q1</div>
-      </div>
-    </div>
-
-    <div class="layout">
-
-      <!-- 主內容 -->
-      <div>
-
-        <section>
-          <h2>🧾 價格與付款方式（口語紀錄）</h2>
-
-          <p>
-            我看的是高樓層三房，主力坪數約 38 坪，加上約兩坪左右雨遮，
-            全部權狀大約落在 40.5 坪左右。因為雨遮不計價，未來若要轉售，
-            換算權狀坪的單價會看起來比較漂亮。
-          </p>
-
-          <p>
-            車位都是大車位，依樓層落在大約 295 萬到 345 萬上下。對家庭用車、休旅車或嬰兒用品較多的人來說會比較實用。
-          </p>
-
-          <p>
-            付款方式走標準結構款，約 11 個月繳一次，沒有特別優惠，也不會太吃力，
-            算是一般預售屋常見的節奏。
-          </p>
-
-          <p>
-            含車位後總價大約落在五千多萬。整體來說，我覺得比較適合重視建商品牌與坪效的人；
-            若像我一樣希望公設完整、空間動線更舒適，就會再多比較其他案子。
-          </p>
-        </section>
-
-        <section>
-          <h2>🏡 我看到的產品優缺點</h2>
-
-          <h3>優點（我認為不錯的地方）</h3>
-          <ul>
-            <li>RC 結構＋外審，建築品質有基本保障。</li>
-            <li>樓高 3.2 米，空間感較一般住宅更好。</li>
-            <li>公設比偏低 → 室內實際坪數更充足。</li>
-            <li>都更案，新建物耐震結構佳。</li>
-          </ul>
-
-          <h3>可以再加強（個人偏好）</h3>
-          <ul>
-            <li>玄關較簡約，無完整落塵區。</li>
-            <li>缺少前陽台，生活習慣需調整。</li>
-            <li>衛浴尺度略小。</li>
-            <li>公設偏基礎，偏向開放式。</li>
-            <li>外觀較低調，辨識度不高（主觀）。</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>📍 位置與生活圈體感</h2>
-
-          <p>
-            南港屬於園區＋住宅混合生活圈，機能屬實用型，不是傳統老市區那種高密度生活氛圍。
-            我覺得生活功能夠用，但不算特別便利或有特色，會比較依個人需求而定。
-          </p>
-
-          <div class="tag-row">
-            <span class="tag">園區生活圈</span>
-            <span class="tag">實用耐看</span>
-            <span class="tag">非市中心氛圍</span>
+        <!-- 中工雋詠 卡片 -->
+        <a class="card" href="taipei/jungong.html">
+          <div class="card-title">中工雋詠（BesTaipei）｜南港區三房預售</div>
+          <div class="card-meta">
+            台北市 · 南港區 · 三房約 38 坪 · 評分：60 / 100 · 預計 2029 Q1 交屋
           </div>
-        </section>
-
-        <section>
-          <h2>📝 個人總結</h2>
-
-          <p>
-            整體來說，中工雋詠是一個結構穩、坪效好、走務實路線的產品。
-            對重視室內空間、偏好低公設比的人來說是能列入考慮的案子。
-          </p>
-
-          <p>
-            但若像我一樣重視公設質感、玄關尺度、陽台機能、或希望生活圈更成熟一些，
-            用五千多萬的預算可能會把其他區域與案子列為更優先選項。
-          </p>
-
-          <p><strong>目前在我心中是「備案可以觀察」的等級。</strong></p>
-        </section>
-
-      </div>
-
-      <!-- 右側側欄 -->
-      <aside>
-
-        <section>
-          <h2>實景照片 / 格局圖（之後可換成圖片）</h2>
-
-          <p style="font-size:13px;color:#6b7280;margin-bottom:6px;">
-            上傳照片到 <code>images/</code> 資料夾後，把灰框改成 &lt;img&gt; 即可。
-          </p>
-
-          <div class="gallery">
-            <div class="photo-card">外觀 / 街景</div>
-            <div class="photo-card">客廳 / 餐廳</div>
-            <div class="photo-card">格局圖</div>
-            <div class="photo-card">公設 / 大廳</div>
-          </div>
-        </section>
-
-        <section>
-          <h2>一眼看懂本案</h2>
-
-          <h3>關鍵標籤</h3>
           <div class="tag-row">
+            <span class="tag">北市</span>
+            <span class="tag">南港</span>
+            <span class="tag">預售</span>
             <span class="tag">三房</span>
-            <span class="tag">預售屋</span>
-            <span class="tag">公設比 31%</span>
-            <span class="tag">都更案</span>
           </div>
+        </a>
 
-          <h3>比較適合</h3>
-          <p style="font-size:13px;">
-            想要室內坪效好、結構穩、品牌建商的自住族。
-          </p>
+        <!-- 未來建案：你之後可以複製這一段改內容 -->
+        <!--
+        <a class="card" href="newtaipei/xxxx.html">
+          <div class="card-title">某某案名｜新店區兩房預售</div>
+          <div class="card-meta">新北市 · 新店區 · 兩房 · 評分：75 / 100</div>
+          <div class="tag-row">
+            <span class="tag">新北</span>
+            <span class="tag">預售</span>
+          </div>
+        </a>
+        -->
 
-          <h3>可能不適合</h3>
-          <p style="font-size:13px;">
-            重視公設完整、玄關尺度、陽台日常機能的家庭。
-          </p>
-        </section>
-
-      </aside>
-
-    </div>
+      </div>
+    </section>
 
     <footer>
-      © 2025 個人賞屋心得 · 以上內容皆為主觀紀錄，請以建商官方資料為準。
+      © 2025 賞屋筆記 my-fun.tw · 以上內容皆為個人主觀心得與紀錄，非任何建商或代銷之官方資訊。
     </footer>
-
   </div>
 </body>
 </html>
-
-
