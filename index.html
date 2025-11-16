@@ -160,6 +160,17 @@
 .card-content {
   flex: 1;
 }
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card {
+  width: 100%;       /* 吃滿整排 */
+  display: flex;
+}
 
   </style>
 
@@ -196,50 +207,30 @@
 
     <section>
       <h2 style="font-size:16px;margin:0 0 10px;">最新賞屋心得</h2>
-      <div class="grid">
+      <div class="card-list">
 
-        <!-- 中工雋詠 卡片 -->
-        <a class="card" href="taipei/jungong.html">
-
-<a class="card" href="taipei/jungong.html">
-
-  <!-- 左邊縮圖（小圖） -->
-  <img 
-    src="images/jungong/IMG_8306.JPEG" 
-    class="card-thumb-small"
-    alt="中工雋詠縮圖"
-  >
-
-  <!-- 右邊文字內容 -->
-  <div class="card-content">
-    <div class="card-title">中工雋詠（BesTaipei）｜南港區三房預售</div>
-    <div class="card-meta">
-      台北市 · 南港區 · 三房約 38 坪 · 評分：83 / 100 · 預計 2029 Q1 交屋
-    </div>
-    <div class="tag-row">
-      <span class="tag">北市</span>
-      <span class="tag">南港</span>
-      <span class="tag">預售</span>
-      <span class="tag">三房</span>
-    </div>
-  </div>
-
-</a>
-
-
-        <!-- 未來建案：你之後可以複製這一段改內容 -->
-        <!--
-        <a class="card" href="newtaipei/xxxx.html">
-          <div class="card-title">某某案名｜新店區兩房預售</div>
-          <div class="card-meta">新北市 · 新店區 · 兩房 · 評分：75 / 100</div>
-          <div class="tag-row">
-            <span class="tag">新北</span>
-            <span class="tag">預售</span>
-          </div>
-        </a>
-        -->
-
+  <a class="card" href="taipei/jungong.html">
+    <img 
+      src="images/jungong/IMG_4321.JPG" 
+      class="card-thumb-small"
+      alt="中工雋詠縮圖"
+    >
+    <div class="card-content">
+      <div class="card-title">中工雋詠（BesTaipei）｜南港區三房預售</div>
+      <div class="card-meta">
+        台北市 · 南港區 · 三房約 38 坪 · 評分：60 / 100 · 預計 2029 Q1 交屋
       </div>
+      <div class="tag-row">
+        <span class="tag">北市</span>
+        <span class="tag">南港</span>
+        <span class="tag">預售</span>
+        <span class="tag">三房</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
     </section>
 
     <footer>
@@ -248,6 +239,7 @@
   </div>
 </body>
 </html>
+
 
 
 
